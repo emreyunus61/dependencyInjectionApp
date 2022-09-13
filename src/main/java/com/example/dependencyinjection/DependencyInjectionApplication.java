@@ -1,6 +1,7 @@
 package com.example.dependencyinjection;
 
 import com.example.dependencyinjection.controllers.MyController;
+import com.example.dependencyinjection.controllers.PropertyInjectedController;
 import jdk.swing.interop.SwingInterOpUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +20,13 @@ public class DependencyInjectionApplication {
         String  hello = myController.sayHello();
 
         System.out.println(hello);
+
+
+        System.out.println("------------Property");
+
+        PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("PropertyInjectedController");
+
+        System.out.println(propertyInjectedController.getGreeting());
 
     }
 
